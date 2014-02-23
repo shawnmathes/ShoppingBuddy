@@ -25,6 +25,7 @@ public class ShoppingListPad {
     private ArrayList<ShoppingList> mShoppingLists;
     
     private static ShoppingListPad sShoppingListPad;
+    @SuppressWarnings("unused")
     private Context mAppContext;
     
     private ShoppingListPad(Context appContext) {

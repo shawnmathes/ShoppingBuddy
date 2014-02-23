@@ -42,7 +42,12 @@ public class MainListFragment extends ListFragment {
     
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
+        showList(position);
+    }
+    
+    private void showList(int index) {
         Intent intent = new Intent(getActivity(), ItemListActivity.class);
+        intent.putExtra(ItemListActivity.ITEM_LIST_INDEX, index);
         startActivity(intent);
     }
 }

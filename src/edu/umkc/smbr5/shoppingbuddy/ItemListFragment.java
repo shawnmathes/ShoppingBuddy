@@ -25,11 +25,30 @@ import android.widget.ArrayAdapter;
 public class ItemListFragment extends ListFragment {
     private ArrayList<ShoppingItem> mShoppingItems;
     
+    /**
+     * Create a new instance of DetailsFragment, initialized to
+     * show the text at 'index'.
+     */
+    public static ItemListFragment newInstance(int index) {
+        ItemListFragment i = new ItemListFragment();
+
+        // Supply index input as an argument.
+        Bundle args = new Bundle();
+        args.putInt("index", index);
+        i.setArguments(args);
+
+        return i;
+    }
+    
+    public int getShownIndex() {
+        return getArguments().getInt("index", 0);
+    }
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        ShoppingList list = ShoppingListPad.get(getActivity()).getShoppingLists().get(1);
+        ShoppingList list = ShoppingListPad.get(getActivity()).getShoppingLists().get(getShownIndex());
         getActivity().setTitle(list.getTitle());
         mShoppingItems = list.getList();
         

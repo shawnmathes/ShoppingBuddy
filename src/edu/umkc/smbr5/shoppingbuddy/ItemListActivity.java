@@ -17,15 +17,20 @@
 package edu.umkc.smbr5.shoppingbuddy;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 
 public class ItemListActivity extends SingleFragmentActivity {
+    public static final String ITEM_LIST_INDEX = "edu.umkc.smbr5.shoppingbuddy.index";
 
     @Override
     protected Fragment createFragment() {
         setupActionBar();
-        return new ItemListFragment();
+        
+        Intent intent = getIntent();
+        int index = intent.getIntExtra(ITEM_LIST_INDEX, 0);
+        return ItemListFragment.newInstance(index);
     }
     
     /**

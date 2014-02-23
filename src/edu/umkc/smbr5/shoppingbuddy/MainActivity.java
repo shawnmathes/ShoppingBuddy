@@ -1,15 +1,13 @@
 package edu.umkc.smbr5.shoppingbuddy;
 
-import android.os.Bundle;
-import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SingleFragmentActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected Fragment createFragment() {
+        return new MainListFragment();
     }
 
     @Override

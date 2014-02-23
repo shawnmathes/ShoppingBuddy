@@ -28,8 +28,10 @@ public class ItemListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle(R.string.main_list_title);
-        mShoppingItems = ShoppingListPad.get(getActivity()).getShoppingLists().get(1).getList();
+        
+        ShoppingList list = ShoppingListPad.get(getActivity()).getShoppingLists().get(1);
+        getActivity().setTitle(list.getTitle());
+        mShoppingItems = list.getList();
         
         ArrayAdapter<ShoppingItem> adapter =
                 new ArrayAdapter<ShoppingItem>(getActivity(),

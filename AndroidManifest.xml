@@ -24,7 +24,6 @@
 		</activity>
 		<activity
 			android:name="edu.umkc.smbr5.shoppingbuddy.ItemListActivity"
-			android:label="@string/title_activity_item_list"
 			android:parentActivityName="edu.umkc.smbr5.shoppingbuddy.MainActivity" >
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"

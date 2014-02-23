@@ -61,4 +61,9 @@ public class ShoppingItem {
     public void setCheckedOff(Boolean checkedOff) {
         mCheckedOff = checkedOff;
     }
+    
+    @Override
+    public String toString() {
+        return mTitle;
+    }
 }
